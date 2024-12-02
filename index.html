@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hereditary - Landing Page</title>
+    <link rel="stylesheet" href="css\css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#sinopsis">Sinopsis</a>
+            <a href="#elenco">Elenco</a>
+            <a href="#galeria">Galería</a>
+            <a href="#trailer">Trailer</a>
+        </div>
+        <div class="dropdown">
+            <a class="contact-button" id="contactBtn">Contacto</a>
+            <div class="dropdown-content">
+                <a href="#" id="openContact">Contacto</a>
+                <a href="#trailer" id="showSocial">Redes</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="hero">
+        <img src="img\img.png" alt="">
+        <div class="genres">
+            <span>Terror</span>
+            <span>Drama</span>
+            <span>Tensa</span>
+            <span>Pesimista</span>
+        </div>
+    </div>
+
+    <section id="sinopsis" class="section">
+        <h2>Sinopsis</h2>
+        <p>Hereditary es un inquietante thriller psicológico dirigido por Ari Aster que explora la complejidad del duelo, la familia y el legado oscuro que se hereda de generación en generación.
+            La historia comienza con la muerte de Ellen, la matriarca de la familia Graham. Annie, su hija, es una artista que se especializa en la creación de maquetas que reflejan su vida familiar.
+            A medida que Annie y su familia intentan lidiar con la pérdida, comienzan a desenterrar secretos inquietantes sobre su linaje.</p>
+    </section>
+
+    <section id="elenco" class="section">
+        <h2>Elenco Destacado</h2>
+        <ul>
+            <li>Toni Collette como Annie Graham</li>
+            <li>Alex Wolff como Peter Graham</li>
+            <li>Millie Shapiro como Charlie Graham</li>
+            <li>Gabriel Byrne como Steve Graham</li>
+        </ul>
+    </section>
+
+    <section id="galeria" class="section gallery">
+        <h2>Galería</h2>
+        <img src="img\1.png" alt="Imagen 1">
+        <img src="img\2.png" alt="Imagen 2">
+        <img src="img\3.png" alt="Imagen 3">
+    </section>
+
+    <section id="trailer" class="section">
+        <h2>Trailer</h2>
+        <p><a class="trailer-button" href="https://youtu.be/yiPvtoNMRa4" target="_blank">Ver Trailer</a></p>
+    </section>
+</div>
+
+<!-- Ventana emergente para el formulario de contacto -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contacto</h2>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Mensaje:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2023 Hereditary. Todos los derechos reservados.</p>
+    <div class="social-icons" id="socialIcons">
+        <a href="https://twitter.com/Hereditary" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/hereditarymovie/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/hereditarymovie/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+</footer>
+
+<script>
+    // Obtener el modal
+    var modal = document.getElementById("contactModal");
+
+    // Obtener el botón que abre el modal
+    var btn = document.getElementById("contactBtn");
+
+    // Obtener el elemento <span> que cierra el modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Mostrar los iconos de redes sociales
+    var socialIcons = document.getElementById("socialIcons");
+
+    // Cuando el usuario hace clic en el botón de formulario de contacto
+    document.getElementById("openContact").onclick = function() {
+        modal.style.display = "block";
+        socialIcons.style.display = "none"; // Asegúrate de que se ocultan los iconos
+    }
+
+    // Cuando el usuario hace clic en "Redes Sociales"
+    document.getElementById("showSocial").onclick = function() {
+        socialIcons.style.display = "block"; // Mostrar iconos de redes
+        modal.style.display = "none"; // Cerrar el modal si está abierto
+    }
+
+    // Cuando el usuario hace clic en <span> (x), cerrar el modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cuando el usuario hace clic en cualquier parte fuera del modal, cerrarlo
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
